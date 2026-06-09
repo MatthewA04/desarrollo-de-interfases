@@ -1,0 +1,283 @@
+/* ====================================================
+   ESTILOS GLOBALES — VetCare
+   Paleta pastel suave + tipografía elegante
+   ==================================================== */
+
+/* --- Variables de color pastel --- */
+:root {
+  --vc-bg:          #f5f3ef;      /* fondo general: crema muy suave */
+  --vc-surface:     #ffffff;      /* superficie de cards */
+  --vc-border:      #ddd8d0;      /* borde de cards */
+  --vc-primary:     #7a9e87;      /* verde salvia */
+  --vc-primary-dk:  #5c7d6a;      /* verde salvia oscuro (hover) */
+  --vc-primary-lt:  #e8f0eb;      /* verde salvia muy claro (fondos) */
+  --vc-accent:      #c2956c;      /* terracota suave */
+  --vc-accent-lt:   #f5ece3;      /* terracota muy claro */
+  --vc-text:        #3d3530;      /* texto principal: marrón oscuro */
+  --vc-text-muted:  #857970;      /* texto secundario */
+  --vc-warning:     #e8c97a;      /* amarillo pastel */
+  --vc-danger:      #d98e8e;      /* rojo pastel */
+  --vc-info:        #89b4c9;      /* azul pastel */
+  --vc-success:     #7a9e87;      /* mismo verde salvia */
+  --vc-shadow:      0 2px 12px rgba(90, 70, 60, 0.08);
+  --vc-shadow-md:   0 4px 20px rgba(90, 70, 60, 0.12);
+  --vc-radius:      12px;
+  --vc-radius-sm:   8px;
+}
+
+/* --- Tipografía base --- */
+body {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  background-color: var(--vc-bg);
+  color: var(--vc-text);
+  font-size: 0.95rem;
+}
+
+h1, h2, h3, h4, h5, .fw-bold, .card-title {
+  font-family: 'Playfair Display', serif;
+  color: var(--vc-text);
+}
+
+/* Títulos de página */
+.page-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  color: var(--vc-text);
+}
+
+/* --- Navbar --- */
+.navbar {
+  background-color: var(--vc-surface) !important;
+  border-bottom: 1px solid var(--vc-border);
+  box-shadow: var(--vc-shadow);
+}
+
+.navbar-brand {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: var(--vc-primary) !important;
+  letter-spacing: 0.5px;
+}
+
+.navbar .nav-link {
+  color: var(--vc-text-muted) !important;
+  font-weight: 400;
+  font-size: 0.9rem;
+  padding: 0.5rem 0.9rem !important;
+  border-radius: var(--vc-radius-sm);
+  transition: all 0.2s;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  color: var(--vc-primary) !important;
+  background-color: var(--vc-primary-lt);
+}
+
+.navbar .nav-link.active {
+  font-weight: 700;
+}
+
+/* Botón de salida en navbar */
+.btn-navbar-exit {
+  border: 1px solid var(--vc-border);
+  color: var(--vc-text-muted);
+  background: transparent;
+  font-size: 0.85rem;
+  border-radius: var(--vc-radius-sm);
+  padding: 0.3rem 0.8rem;
+  transition: all 0.2s;
+}
+.btn-navbar-exit:hover {
+  background: var(--vc-accent-lt);
+  color: var(--vc-accent);
+  border-color: var(--vc-accent);
+}
+
+/* --- Cards con borde visible --- */
+.card {
+  border: 1px solid var(--vc-border) !important;
+  border-radius: var(--vc-radius) !important;
+  box-shadow: var(--vc-shadow) !important;
+  background-color: var(--vc-surface);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.card:hover {
+  box-shadow: var(--vc-shadow-md) !important;
+}
+
+.card-header {
+  border-bottom: 1px solid var(--vc-border) !important;
+  border-radius: var(--vc-radius) var(--vc-radius) 0 0 !important;
+}
+
+.card-footer {
+  border-top: 1px solid var(--vc-border) !important;
+  border-radius: 0 0 var(--vc-radius) var(--vc-radius) !important;
+}
+
+/* Hover elevado para cards interactivas */
+.hover-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--vc-shadow-md) !important;
+}
+
+/* --- Botones --- */
+.btn-primary {
+  background-color: var(--vc-primary) !important;
+  border-color: var(--vc-primary) !important;
+  color: #fff !important;
+  font-weight: 600;
+  border-radius: var(--vc-radius-sm) !important;
+}
+.btn-primary:hover {
+  background-color: var(--vc-primary-dk) !important;
+  border-color: var(--vc-primary-dk) !important;
+}
+
+.btn-outline-primary {
+  border-color: var(--vc-primary) !important;
+  color: var(--vc-primary) !important;
+  border-radius: var(--vc-radius-sm) !important;
+}
+.btn-outline-primary:hover {
+  background-color: var(--vc-primary-lt) !important;
+  color: var(--vc-primary-dk) !important;
+}
+
+.btn-outline-secondary {
+  border-color: var(--vc-border) !important;
+  color: var(--vc-text-muted) !important;
+  border-radius: var(--vc-radius-sm) !important;
+}
+.btn-outline-secondary:hover {
+  background-color: var(--vc-bg) !important;
+  color: var(--vc-text) !important;
+}
+
+.btn-success, .btn-outline-success:hover {
+  background-color: var(--vc-success) !important;
+  border-color: var(--vc-success) !important;
+}
+.btn-outline-success {
+  border-color: var(--vc-success) !important;
+  color: var(--vc-success) !important;
+  border-radius: var(--vc-radius-sm) !important;
+}
+
+/* --- Formularios --- */
+.form-control, .form-select {
+  border: 1px solid var(--vc-border) !important;
+  border-radius: var(--vc-radius-sm) !important;
+  background-color: #fdfcfb !important;
+  color: var(--vc-text) !important;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.9rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.form-control:focus, .form-select:focus {
+  border-color: var(--vc-primary) !important;
+  box-shadow: 0 0 0 3px rgba(122, 158, 135, 0.15) !important;
+  background-color: #fff !important;
+}
+.form-label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--vc-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  margin-bottom: 0.35rem;
+}
+
+/* --- Badges pastel --- */
+.badge {
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.3px;
+  border-radius: 20px !important;
+  padding: 0.35em 0.75em !important;
+}
+
+/* Reemplaza colores de Bootstrap con los pastel */
+.bg-primary   { background-color: var(--vc-primary) !important; }
+.bg-success   { background-color: #a8c9a0 !important; }
+.bg-warning   { background-color: var(--vc-warning) !important; }
+.bg-danger    { background-color: var(--vc-danger) !important; }
+.bg-info      { background-color: var(--vc-info) !important; }
+.text-primary { color: var(--vc-primary) !important; }
+.text-muted   { color: var(--vc-text-muted) !important; }
+
+/* --- Alertas suaves --- */
+.alert {
+  border-radius: var(--vc-radius-sm) !important;
+  font-size: 0.88rem;
+  border-width: 1px !important;
+}
+.alert-success {
+  background-color: var(--vc-primary-lt) !important;
+  border-color: var(--vc-primary) !important;
+  color: var(--vc-primary-dk) !important;
+}
+.alert-danger {
+  background-color: #fbeded !important;
+  border-color: var(--vc-danger) !important;
+  color: #8b3a3a !important;
+}
+.alert-warning {
+  background-color: #fdf8ec !important;
+  border-color: var(--vc-warning) !important;
+  color: #7a6020 !important;
+}
+
+/* --- Tablas --- */
+.table {
+  font-size: 0.88rem;
+  color: var(--vc-text);
+}
+.table thead th {
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: var(--vc-text-muted);
+  background-color: var(--vc-bg) !important;
+  border-color: var(--vc-border) !important;
+}
+.table td {
+  border-color: var(--vc-border) !important;
+  vertical-align: middle;
+}
+
+/* --- Scrollbar --- */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--vc-bg); }
+::-webkit-scrollbar-thumb { background: var(--vc-border); border-radius: 3px; }
+
+/* --- Animación para citas próximas (directiva) --- */
+@keyframes pulse-border {
+  0%, 100% { border-left-color: var(--vc-accent); }
+  50%       { border-left-color: var(--vc-warning); }
+}
+.proxima-cita-highlight {
+  border-left: 3px solid var(--vc-accent) !important;
+  animation: pulse-border 2.5s infinite;
+}
+
+/* --- Separador de sección --- */
+.section-divider {
+  border: none;
+  border-top: 1px solid var(--vc-border);
+  margin: 1.5rem 0;
+}
+
+/* --- Input group --- */
+.input-group-text {
+  background-color: var(--vc-bg) !important;
+  border-color: var(--vc-border) !important;
+  color: var(--vc-text-muted) !important;
+}
